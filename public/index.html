@@ -1,53 +1,296 @@
 <!DOCTYPE html>
-<html>
+<html lang="id">
+
 <head>
+
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
     <title>AKAY DIGITAL NUSANTARA</title>
 
+    <script src="https://cdn.tailwindcss.com"></script>
+
     <script
         src="https://app.sandbox.midtrans.com/snap/snap.js"
-        data-client-key="SB-Mid-client-XXXX">
+        data-client-key="SB-Mid-client-XXXXXXXX">
     </script>
 
 </head>
 
-<body>
+<body class="bg-gray-100 text-gray-800">
 
-<h1>AKAY DIGITAL NUSANTARA</h1>
+    <!-- Navbar -->
 
-<button id="pay-button">
-    Bayar Sekarang
-</button>
+    <nav class="bg-white shadow-md">
 
-<script>
+        <div class="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
 
-document.getElementById('pay-button').onclick = async function(){
+            <h1 class="text-2xl font-bold text-blue-600">
+                AKAY DIGITAL NUSANTARA
+            </h1>
 
-    const response = await fetch('/api/create-transaction', {
-        method: 'POST'
-    });
+            <a href="#produk"
+                class="bg-blue-600 hover:bg-blue-700 text-white px-5 py-2 rounded-xl transition">
 
-    const data = await response.json();
+                Produk
 
-    snap.pay(data.token, {
+            </a>
 
-        onSuccess: function(result){
-            window.location.href = '/success.html';
-        },
+        </div>
 
-        onPending: function(result){
-            window.location.href = '/pending.html';
-        },
+    </nav>
 
-        onError: function(result){
-            window.location.href = '/failed.html';
+    <!-- Hero -->
+
+    <section class="bg-gradient-to-r from-blue-600 to-indigo-700 text-white py-24">
+
+        <div class="max-w-6xl mx-auto px-6 text-center">
+
+            <h1 class="text-5xl font-bold mb-6">
+                Solusi Digital Untuk Bisnis Modern
+            </h1>
+
+            <p class="text-xl opacity-90 max-w-2xl mx-auto leading-relaxed">
+
+                Kami menyediakan jasa pembuatan website, desain digital,
+                dan kebutuhan bisnis online dengan pembayaran aman menggunakan Midtrans.
+
+            </p>
+
+            <a href="#produk"
+                class="inline-block mt-10 bg-white text-blue-700 px-8 py-4 rounded-2xl font-semibold hover:bg-gray-100 transition">
+
+                Lihat Produk
+
+            </a>
+
+        </div>
+
+    </section>
+
+    <!-- Produk -->
+
+    <section id="produk" class="py-20">
+
+        <div class="max-w-7xl mx-auto px-6">
+
+            <div class="text-center mb-14">
+
+                <h2 class="text-4xl font-bold mb-4">
+                    Produk & Layanan
+                </h2>
+
+                <p class="text-gray-600">
+                    Pilih layanan digital sesuai kebutuhan bisnis Anda
+                </p>
+
+            </div>
+
+            <div class="grid md:grid-cols-3 gap-8">
+
+                <!-- Produk 1 -->
+
+                <div class="bg-white rounded-3xl shadow-lg overflow-hidden">
+
+                    <div class="p-8">
+
+                        <h3 class="text-2xl font-bold mb-4">
+                            Website Company Profile
+                        </h3>
+
+                        <p class="text-gray-600 mb-6 leading-relaxed">
+
+                            Website profesional untuk perusahaan, UMKM,
+                            dan bisnis modern.
+
+                        </p>
+
+                        <div class="text-4xl font-bold text-blue-600 mb-8">
+                            Rp500.000
+                        </div>
+
+                        <button
+                            onclick="payNow('Website Company Profile', 500000)"
+                            class="w-full bg-blue-600 hover:bg-blue-700 text-white py-4 rounded-2xl transition">
+
+                            Bayar Sekarang
+
+                        </button>
+
+                    </div>
+
+                </div>
+
+                <!-- Produk 2 -->
+
+                <div class="bg-white rounded-3xl shadow-lg overflow-hidden">
+
+                    <div class="p-8">
+
+                        <h3 class="text-2xl font-bold mb-4">
+                            Landing Page Premium
+                        </h3>
+
+                        <p class="text-gray-600 mb-6 leading-relaxed">
+
+                            Landing page modern untuk kebutuhan promosi,
+                            iklan, dan campaign digital.
+
+                        </p>
+
+                        <div class="text-4xl font-bold text-blue-600 mb-8">
+                            Rp350.000
+                        </div>
+
+                        <button
+                            onclick="payNow('Landing Page Premium', 350000)"
+                            class="w-full bg-blue-600 hover:bg-blue-700 text-white py-4 rounded-2xl transition">
+
+                            Bayar Sekarang
+
+                        </button>
+
+                    </div>
+
+                </div>
+
+                <!-- Produk 3 -->
+
+                <div class="bg-white rounded-3xl shadow-lg overflow-hidden">
+
+                    <div class="p-8">
+
+                        <h3 class="text-2xl font-bold mb-4">
+                            Desain Logo Bisnis
+                        </h3>
+
+                        <p class="text-gray-600 mb-6 leading-relaxed">
+
+                            Jasa desain logo profesional dan branding digital
+                            untuk usaha Anda.
+
+                        </p>
+
+                        <div class="text-4xl font-bold text-blue-600 mb-8">
+                            Rp150.000
+                        </div>
+
+                        <button
+                            onclick="payNow('Desain Logo Bisnis', 150000)"
+                            class="w-full bg-blue-600 hover:bg-blue-700 text-white py-4 rounded-2xl transition">
+
+                            Bayar Sekarang
+
+                        </button>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+    <!-- Tentang -->
+
+    <section class="bg-white py-20">
+
+        <div class="max-w-5xl mx-auto px-6 text-center">
+
+            <h2 class="text-4xl font-bold mb-6">
+                Tentang Kami
+            </h2>
+
+            <p class="text-gray-600 leading-relaxed text-lg">
+
+                PT AKAY DIGITAL NUSANTARA merupakan perusahaan
+                yang bergerak di bidang layanan digital,
+                pengembangan website, desain grafis,
+                dan solusi teknologi untuk kebutuhan bisnis online.
+
+            </p>
+
+        </div>
+
+    </section>
+
+    <!-- Footer -->
+
+    <footer class="bg-gray-900 text-white py-10">
+
+        <div class="max-w-6xl mx-auto px-6 text-center">
+
+            <h3 class="text-2xl font-bold mb-4">
+                AKAY DIGITAL NUSANTARA
+            </h3>
+
+            <p class="text-gray-400 mb-2">
+                Email: akaydigital.id@gmail.com
+            </p>
+
+            <p class="text-gray-400">
+                WhatsApp: 0818404222
+            </p>
+
+        </div>
+
+    </footer>
+
+    <!-- Midtrans -->
+
+    <script>
+
+        async function payNow(productName, amount) {
+
+            try {
+
+                const response = await fetch('/api/create-transaction', {
+
+                    method: 'POST',
+
+                    headers: {
+                        'Content-Type': 'application/json'
+                    },
+
+                    body: JSON.stringify({
+                        product: productName,
+                        amount: amount
+                    })
+
+                });
+
+                const data = await response.json();
+
+                snap.pay(data.token, {
+
+                    onSuccess: function(result) {
+                        window.location.href = '/success.html';
+                    },
+
+                    onPending: function(result) {
+                        window.location.href = '/pending.html';
+                    },
+
+                    onError: function(result) {
+                        window.location.href = '/failed.html';
+                    }
+
+                });
+
+            } catch (error) {
+
+                alert('Terjadi kesalahan');
+
+                console.log(error);
+
+            }
+
         }
 
-    });
-
-};
-
-</script>
+    </script>
 
 </body>
+
 </html>
