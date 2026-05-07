@@ -10,6 +10,11 @@ module.exports = async (req, res) => {
 
     try {
 
+        const {
+            product,
+            amount
+        } = req.body;
+
         let snap = new midtransClient.Snap({
             isProduction: false,
             serverKey: process.env.MIDTRANS_SERVER_KEY,
@@ -22,23 +27,23 @@ module.exports = async (req, res) => {
 
             transaction_details: {
                 order_id: orderId,
-                gross_amount: 500000
-            },
-
-            customer_details: {
-                first_name: 'Budi',
-                email: 'budi@gmail.com',
-                phone: '08123456789'
+                gross_amount: amount
             },
 
             item_details: [
                 {
                     id: 'ITEM1',
-                    price: 500000,
+                    price: amount,
                     quantity: 1,
-                    name: 'Jasa Website'
+                    name: product
                 }
-            ]
+            ],
+
+            customer_details: {
+                first_name: 'Customer',
+                email: 'customer@email.com',
+                phone: '08123456789'
+            }
 
         };
 
@@ -49,6 +54,8 @@ module.exports = async (req, res) => {
         });
 
     } catch (error) {
+
+        console.log(error);
 
         res.status(500).json({
             error: error.message
