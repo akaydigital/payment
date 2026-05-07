@@ -52,17 +52,10 @@
 
             <p class="text-xl opacity-90 max-w-2xl mx-auto leading-relaxed">
 
-                Kami menyediakan jasa pembuatan website, desain digital,
-                dan kebutuhan bisnis online dengan pembayaran aman menggunakan Midtrans.
+                Website, landing page, desain logo,
+                dan solusi digital profesional untuk bisnis Anda.
 
             </p>
-
-            <a href="#produk"
-                class="inline-block mt-10 bg-white text-blue-700 px-8 py-4 rounded-2xl font-semibold hover:bg-gray-100 transition">
-
-                Lihat Produk
-
-            </a>
 
         </div>
 
@@ -81,7 +74,7 @@
                 </h2>
 
                 <p class="text-gray-600">
-                    Pilih layanan digital sesuai kebutuhan bisnis Anda
+                    Pilih layanan terbaik untuk kebutuhan bisnis Anda
                 </p>
 
             </div>
@@ -90,100 +83,79 @@
 
                 <!-- Produk 1 -->
 
-                <div class="bg-white rounded-3xl shadow-lg overflow-hidden">
+                <div class="bg-white rounded-3xl shadow-lg p-8">
 
-                    <div class="p-8">
+                    <h3 class="text-2xl font-bold mb-4">
+                        Website Company Profile
+                    </h3>
 
-                        <h3 class="text-2xl font-bold mb-4">
-                            Website Company Profile
-                        </h3>
+                    <p class="text-gray-600 mb-6">
+                        Website profesional untuk bisnis dan perusahaan.
+                    </p>
 
-                        <p class="text-gray-600 mb-6 leading-relaxed">
-
-                            Website profesional untuk perusahaan, UMKM,
-                            dan bisnis modern.
-
-                        </p>
-
-                        <div class="text-4xl font-bold text-blue-600 mb-8">
-                            Rp500
-                        </div>
-
-                        <button
-                            onclick="payNow('Website Company Profile', 500)"
-                            class="w-full bg-blue-600 hover:bg-blue-700 text-white py-4 rounded-2xl transition">
-
-                            Bayar Sekarang
-
-                        </button>
-
+                    <div class="text-4xl font-bold text-blue-600 mb-8">
+                        Rp500.000
                     </div>
+
+                    <button
+                        onclick="openModal('Website Company Profile', 500000)"
+                        class="w-full bg-blue-600 hover:bg-blue-700 text-white py-4 rounded-2xl transition">
+
+                        Beli Sekarang
+
+                    </button>
 
                 </div>
 
                 <!-- Produk 2 -->
 
-                <div class="bg-white rounded-3xl shadow-lg overflow-hidden">
+                <div class="bg-white rounded-3xl shadow-lg p-8">
 
-                    <div class="p-8">
+                    <h3 class="text-2xl font-bold mb-4">
+                        Landing Page Premium
+                    </h3>
 
-                        <h3 class="text-2xl font-bold mb-4">
-                            Landing Page Premium
-                        </h3>
+                    <p class="text-gray-600 mb-6">
+                        Landing page modern untuk kebutuhan promosi digital.
+                    </p>
 
-                        <p class="text-gray-600 mb-6 leading-relaxed">
-
-                            Landing page modern untuk kebutuhan promosi,
-                            iklan, dan campaign digital.
-
-                        </p>
-
-                        <div class="text-4xl font-bold text-blue-600 mb-8">
-                            Rp350
-                        </div>
-
-                        <button
-                            onclick="payNow('Landing Page Premium', 350)"
-                            class="w-full bg-blue-600 hover:bg-blue-700 text-white py-4 rounded-2xl transition">
-
-                            Bayar Sekarang
-
-                        </button>
-
+                    <div class="text-4xl font-bold text-blue-600 mb-8">
+                        Rp350.000
                     </div>
+
+                    <button
+                        onclick="openModal('Landing Page Premium', 350000)"
+                        class="w-full bg-blue-600 hover:bg-blue-700 text-white py-4 rounded-2xl transition">
+
+                        Beli Sekarang
+
+                    </button>
 
                 </div>
 
                 <!-- Produk 3 -->
 
-                <div class="bg-white rounded-3xl shadow-lg overflow-hidden">
+                <div class="bg-white rounded-3xl shadow-lg p-8">
 
-                    <div class="p-8">
+                    <h3 class="text-2xl font-bold mb-4">
+                        Desain Logo Bisnis
+                    </h3>
 
-                        <h3 class="text-2xl font-bold mb-4">
-                            Desain Logo Bisnis
-                        </h3>
+                    <p class="text-gray-600 mb-6">
+                        Logo profesional dan branding modern untuk usaha Anda.
+                    </p>
 
-                        <p class="text-gray-600 mb-6 leading-relaxed">
-
-                            Jasa desain logo profesional dan branding digital
-                            untuk usaha Anda.
-
-                        </p>
-
-                        <div class="text-4xl font-bold text-blue-600 mb-8">
-                            Rp150
-                        </div>
-
-                        <button
-                            onclick="payNow('Desain Logo Bisnis', 150)"
-                            class="w-full bg-blue-600 hover:bg-blue-700 text-white py-4 rounded-2xl transition">
-
-                            Bayar Sekarang
-
-                        </button>
-
+                    <div class="text-4xl font-bold text-blue-600 mb-8">
+                        Rp150.000
                     </div>
+
+                    <button
+                        onclick="openModal('Desain Logo Bisnis', 150000)"
+                        class="w-full bg-blue-600 hover:bg-blue-700 text-white py-4 rounded-2xl transition">
+
+                        Beli Sekarang
+
+                    </button>
 
                 </div>
 
@@ -193,56 +165,149 @@
 
     </section>
 
-    <!-- Tentang -->
+    <!-- Modal -->
 
-    <section class="bg-white py-20">
+    <div id="checkoutModal"
+        class="fixed inset-0 bg-black bg-opacity-50 hidden items-center justify-center z-50">
 
-        <div class="max-w-5xl mx-auto px-6 text-center">
+        <div class="bg-white rounded-3xl p-8 w-full max-w-md">
 
-            <h2 class="text-4xl font-bold mb-6">
-                Tentang Kami
-            </h2>
+            <div class="flex justify-between items-center mb-6">
 
-            <p class="text-gray-600 leading-relaxed text-lg">
+                <h2 class="text-2xl font-bold">
+                    Checkout Produk
+                </h2>
 
-                PT AKAY DIGITAL NUSANTARA merupakan perusahaan
-                yang bergerak di bidang layanan digital,
-                pengembangan website, desain grafis,
-                dan solusi teknologi untuk kebutuhan bisnis online.
+                <button onclick="closeModal()"
+                    class="text-gray-500 hover:text-black text-2xl">
+                    ×
+                </button>
 
-            </p>
+            </div>
+
+            <div class="mb-4">
+
+                <label class="block mb-2 font-medium">
+                    Nama Lengkap
+                </label>
+
+                <input type="text"
+                    id="customerName"
+                    class="w-full border rounded-xl px-4 py-3 focus:outline-none focus:ring-2 focus:ring-blue-500">
+
+            </div>
+
+            <div class="mb-6">
+
+                <label class="block mb-2 font-medium">
+                    Email
+                </label>
+
+                <input type="email"
+                    id="customerEmail"
+                    class="w-full border rounded-xl px-4 py-3 focus:outline-none focus:ring-2 focus:ring-blue-500">
+
+            </div>
+
+            <div class="bg-gray-100 rounded-2xl p-5 mb-6">
+
+                <div class="flex justify-between mb-3">
+
+                    <span class="text-gray-600">
+                        Produk
+                    </span>
+
+                    <span id="modalProduct" class="font-semibold">
+                    </span>
+
+                </div>
+
+                <div class="flex justify-between">
+
+                    <span class="text-gray-600">
+                        Harga
+                    </span>
+
+                    <span id="modalPrice"
+                        class="font-bold text-blue-600">
+                    </span>
+
+                </div>
+
+            </div>
+
+            <button onclick="payNow()"
+                class="w-full bg-blue-600 hover:bg-blue-700 text-white py-4 rounded-2xl transition">
+
+                Bayar Sekarang
+
+            </button>
 
         </div>
 
-    </section>
+    </div>
 
     <!-- Footer -->
 
-    <footer class="bg-gray-900 text-white py-10">
+    <footer class="bg-gray-900 text-white py-10 text-center">
 
-        <div class="max-w-6xl mx-auto px-6 text-center">
+        <h3 class="text-2xl font-bold mb-3">
+            AKAY DIGITAL NUSANTARA
+        </h3>
 
-            <h3 class="text-2xl font-bold mb-4">
-                AKAY DIGITAL NUSANTARA
-            </h3>
-
-            <p class="text-gray-400 mb-2">
-                Email: akaydigital.id@gmail.com
-            </p>
-
-            <p class="text-gray-400">
-                WhatsApp: 0818404222
-            </p>
-
-        </div>
+        <p class="text-gray-400">
+            akaydigital.id@gmail.com
+        </p>
 
     </footer>
 
-    <!-- Midtrans -->
-
     <script>
 
-        async function payNow(productName, amount) {
+        let selectedProduct = '';
+        let selectedPrice = 0;
+
+        function formatRupiah(number) {
+            return new Intl.NumberFormat('id-ID').format(number);
+        }
+
+        function openModal(product, price) {
+
+            selectedProduct = product;
+            selectedPrice = price;
+
+            document.getElementById('modalProduct').innerText = product;
+
+            document.getElementById('modalPrice').innerText =
+                'Rp' + formatRupiah(price);
+
+            document.getElementById('checkoutModal')
+                .classList.remove('hidden');
+
+            document.getElementById('checkoutModal')
+                .classList.add('flex');
+        }
+
+        function closeModal() {
+
+            document.getElementById('checkoutModal')
+                .classList.remove('flex');
+
+            document.getElementById('checkoutModal')
+                .classList.add('hidden');
+        }
+
+        async function payNow() {
+
+            const name =
+                document.getElementById('customerName').value;
+
+            const email =
+                document.getElementById('customerEmail').value;
+
+            if (!name || !email) {
+                alert('Nama dan email wajib diisi');
+                return;
+            }
 
             try {
 
@@ -255,8 +320,10 @@
                     },
 
                     body: JSON.stringify({
-                        product: productName,
-                        amount: amount
+                        product: selectedProduct,
+                        amount: selectedPrice,
+                        name: name,
+                        email: email
                     })
 
                 });
@@ -281,9 +348,9 @@
 
             } catch (error) {
 
-                alert('Terjadi kesalahan');
-
                 console.log(error);
+
+                alert('Terjadi kesalahan');
 
             }
 
