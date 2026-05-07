@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+    <title>AKAY DIGITAL NUSANTARA</title>
+
+    <script
+        src="https://app.sandbox.midtrans.com/snap/snap.js"
+        data-client-key="SB-Mid-client-XXXX">
+    </script>
+
+</head>
+
+<body>
+
+<h1>AKAY DIGITAL NUSANTARA</h1>
+
+<button id="pay-button">
+    Bayar Sekarang
+</button>
+
+<script>
+
+document.getElementById('pay-button').onclick = async function(){
+
+    const response = await fetch('/api/create-transaction', {
+        method: 'POST'
+    });
+
+    const data = await response.json();
+
+    snap.pay(data.token, {
+
+        onSuccess: function(result){
+            window.location.href = '/success.html';
+        },
+
+        onPending: function(result){
+            window.location.href = '/pending.html';
+        },
+
+        onError: function(result){
+            window.location.href = '/failed.html';
+        }
+
+    });
+
+};
+
+</script>
+
+</body>
+</html>
